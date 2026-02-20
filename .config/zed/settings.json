@@ -1,0 +1,117 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "eager"
+  },
+  "tab_bar": {
+    "show": true,
+  },
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
+  "agent": {
+    "show_turn_stats": true,
+    "dock": "left",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "notification_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "right",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "terminal": {
+    "copy_on_select": true,
+    "blinking": "on",
+  },
+  "project_panel": {
+    "entry_spacing": "comfortable",
+    "dock": "right",
+    "button": true,
+    "sticky_scroll": false,
+  },
+  "inlay_hints": {
+    "show_background": false,
+  },
+  "show_whitespaces": "all",
+  "always_treat_brackets_as_autoclosed": false,
+  "tab_size": 2,
+  "vim": {
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false,
+  },
+  "relative_line_numbers": "enabled",
+  "which_key": {
+    "enabled": true,
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font Propo",
+  "ui_font_fallbacks": [
+    "JetBrainsMono Nerd Font",
+    "Noto Sans Thai",
+    "Noto Sans Mono CJK JP",
+    "Noto Sans Mono CJK HK",
+    "Noto Sans Mono CJK KR",
+    "Noto Sans Mono CJK SC",
+    "Noto Sans Mono CJK TC",
+    "Noto Color Emoji",
+  ],
+  "ui_font_features": {
+    "calt": true,
+  },
+  "use_system_path_prompts": false,
+  "use_system_prompts": false,
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": false,
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night",
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "binary": {
+        "path": "/usr/bin/rust-analyzer",
+      },
+    },
+  },
+  "preview_tabs": {
+    "enabled": false,
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+}
