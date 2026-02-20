@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if pgrep -x "wl-screenrec" >/dev/null; then
+  pkill -SIGINT -x wl-screenrec
+
+  # Wait for the recording to finish saving
+  while pgrep -x "wl-screenrec" >/dev/null; do sleep 0.1; done
+
+  # Get the name of the last recorded mkv file
+  LATEST_FILE=$(ls -t ~/Videos/ | grep '\.mkv$' | head -n 1)
+  notify-send "Stopped Recording" "Saved to: ~/Videos/$LATEST_FILE"
+else
+  wl-screenrec --low-power=off -f $HOME/Videos/"$(date +'%Y-%m-%d %H-%M-%S')".mkv &
+  notify-send "Started Recording"
+fi

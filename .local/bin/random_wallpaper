@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Configuration
+# ----------------
+# Change this to your actual wallpaper folder
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+# File to store the history of used wallpapers
+HISTORY_FILE="$HOME/.cache/wallpaper_history"
+# How many previous wallpapers to remember (avoid repeating these)
+HISTORY_SIZE=50
+
+# Logic
+# ----------------
+
+# 1. Create the history file if it doesn't exist to avoid errors
+if [[ ! -f "$HISTORY_FILE" ]]; then
+    touch "$HISTORY_FILE"
+fi
+
+# 2. Get all image files from the directory (supports spaces in filenames)
+# We find jpg, png, jpeg, and webp. Adjust extensions if needed.
+# We store the output in a variable.
+all_wallpapers=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" \))
+
+# 3. Filter out wallpapers that are already in the history
+# grep -v: Invert match (select lines NOT matching)
+# grep -x: Match the whole line (so "car.jpg" doesn't match "racecar.jpg")
+# grep -F: Treat patterns as fixed strings (safer for file paths with special chars)
+# grep -f: Read patterns (the history) from a file
+available_wallpapers=$(grep -vxF -f "$HISTORY_FILE" <<<"$all_wallpapers")
+
+# Fallback: If we've used all wallpapers (available list is empty),
+# reset by picking from the full list again.
+if [[ -z "$available_wallpapers" ]]; then
+    available_wallpapers="$all_wallpapers"
+fi
+
+# 4. Select one random wallpaper from the available list
+# shuf -n 1 shuffles the input and gives us the first line
+selected_wallpaper=$(shuf -n 1 <<<"$available_wallpapers")
+
+# 5. Apply and Save
+if [[ -n "$selected_wallpaper" ]]; then
+    # Set the wallpaper using your specific command
+    dms ipc wallpaper set "$selected_wallpaper"
+
+    # Append the selected path to the history file
+    echo "$selected_wallpaper" >>"$HISTORY_FILE"
+
+    # Trim the history file to keep only the last N lines
+    # We use a temp file to safely overwrite the original
+    tail -n "$HISTORY_SIZE" "$HISTORY_FILE" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+
+    echo "Wallpaper set to: $selected_wallpaper"
+else
+    echo "Error: No wallpapers found in $WALLPAPER_DIR"
+    exit 1
+fi

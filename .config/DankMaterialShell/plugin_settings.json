@@ -1,0 +1,17 @@
+{
+  "dankLauncherKeys": {
+    "enabled": true,
+    "pinnedKeys": []
+  },
+  "dankNotepadModule": {
+    "enabled": true
+  },
+  "dankBatteryAlerts": {
+    "enabled": true,
+    "warningThreshold": 15,
+    "criticalThreshold": 5
+  },
+  "emojiLauncher": {
+    "enabled": true
+  }
+}

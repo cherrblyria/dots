@@ -1,0 +1,115 @@
+binds {
+    Alt+Ctrl+Delete hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Alt+Print hotkey-overlay-title="Screenshot: Window" { spawn "dms" "ipc" "call" "niri" "screenshotWindow"; }
+    Alt+space hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="Task Manager: Focus or Toggle" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    Print hotkey-overlay-title="Screenshot: Interactive" { spawn "dms" "ipc" "call" "niri" "screenshot"; }
+    Shift+Print allow-when-locked=true hotkey-overlay-title="Screenshot: Full Screen" { spawn "dms" "ipc" "call" "niri" "screenshotScreen"; }
+    Shift+XF86AudioLowerVolume hotkey-overlay-title="Volume Down (1%)" { spawn "dms" "ipc" "call" "audio" "decrement" "1"; }
+    Shift+XF86AudioRaiseVolume hotkey-overlay-title="Volume Up (1%)" { spawn "dms" "ipc" "call" "audio" "increment" "1"; }
+    Super+A hotkey-overlay-title="Control Center: Toggle" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Super+Alt+B hotkey-overlay-title="Media: Previous Track" allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+Alt+N allow-when-locked=true hotkey-overlay-title="Media: Next Track" { spawn "dms" "ipc" "call" "mpris" "next"; }
+    Super+Alt+P allow-when-locked=true hotkey-overlay-title="Media: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    Super+D hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle" ""; }
+    Super+N hotkey-overlay-title="Notifications: Toggle" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Super+S hotkey-overlay-title="Notepad: Toggle" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+    Super+Shift+Comma hotkey-overlay-title="Settings: Focus or Toggle" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
+    Super+Shift+XF86AudioRaiseVolume hotkey-overlay-title="Audio Output: Cycle" { spawn "dms" "ipc" "call" "audio" "cycleoutput"; }
+    Super+Slash hotkey-overlay-title="Keybinds Cheatsheet: Toggle" { spawn "dms" "ipc" "call" "keybinds" "toggle" "niri"; }
+    Super+V hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Super+Y hotkey-overlay-title="Wallpaper Browser" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Volume Down" { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
+    XF86AudioMute allow-when-locked=true hotkey-overlay-title="Volume Mute Toggle" { spawn "dms" "ipc" "call" "audio" "mute"; }
+    XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Volume Up" { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
+    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="Brightness Down" { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="Brightness Up" { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    Ctrl+Super+WheelScrollDown hotkey-overlay-title="Move to Workspace Down" { move-column-to-workspace-down; }
+    Ctrl+Super+WheelScrollUp hotkey-overlay-title="Move to Workspace Up" { move-column-to-workspace-up; }
+    Super+1 hotkey-overlay-title="Focus Workspace (1)" { focus-workspace 1; }
+    Super+2 hotkey-overlay-title="Focus Workspace (2)" { focus-workspace 2; }
+    Super+3 hotkey-overlay-title="Focus Workspace (3)" { focus-workspace 3; }
+    Super+4 hotkey-overlay-title="Focus Workspace (4)" { focus-workspace 4; }
+    Super+5 hotkey-overlay-title="Focus Workspace (5)" { focus-workspace 5; }
+    Super+6 hotkey-overlay-title="Focus Workspace (6)" { focus-workspace 6; }
+    Super+7 hotkey-overlay-title="Focus Workspace (7)" { focus-workspace 7; }
+    Super+8 hotkey-overlay-title="Focus Workspace (8)" { focus-workspace 8; }
+    Super+9 hotkey-overlay-title="Focus Workspace (9)" { focus-workspace 9; }
+    Super+Ctrl+Down hotkey-overlay-title="Move Workspace Down" { move-workspace-down; }
+    Super+Ctrl+I hotkey-overlay-title="Move Workspace Up" { move-workspace-up; }
+    Super+Ctrl+J hotkey-overlay-title="Move Workspace Down" { move-workspace-down; }
+    Super+Ctrl+K hotkey-overlay-title="Move Workspace Up" { move-workspace-up; }
+    Super+Ctrl+U hotkey-overlay-title="Move Workspace Down" { move-workspace-down; }
+    Super+Ctrl+Up hotkey-overlay-title="Move Workspace Up" { move-workspace-up; }
+    Super+Down hotkey-overlay-title="Focus Down" { focus-window-or-workspace-down; }
+    Super+I hotkey-overlay-title="Focus Workspace Up" { focus-workspace-up; }
+    Super+J hotkey-overlay-title="Focus Down" { focus-window-or-workspace-down; }
+    Super+K hotkey-overlay-title="Focus Up" { focus-window-or-workspace-up; }
+    Super+Page_Down hotkey-overlay-title="Focus Workspace Down" { focus-workspace-down; }
+    Super+Page_Up hotkey-overlay-title="Focus Workspace Up" { focus-workspace-up; }
+    Super+Shift+1 hotkey-overlay-title="Move to Workspace (1)" { move-window-to-workspace 1; }
+    Super+Shift+2 hotkey-overlay-title="Move to Workspace (2)" { move-window-to-workspace 2; }
+    Super+Shift+3 hotkey-overlay-title="Move to Workspace (3)" { move-window-to-workspace 3; }
+    Super+Shift+4 hotkey-overlay-title="Move to Workspace (4)" { move-window-to-workspace 4; }
+    Super+Shift+5 hotkey-overlay-title="Move to Workspace (5)" { move-window-to-workspace 5; }
+    Super+Shift+6 hotkey-overlay-title="Move to Workspace (6)" { move-window-to-workspace 6; }
+    Super+Shift+7 hotkey-overlay-title="Move to Workspace (7)" { move-window-to-workspace 7; }
+    Super+Shift+8 hotkey-overlay-title="Move to Workspace (8)" { move-window-to-workspace 8; }
+    Super+Shift+9 hotkey-overlay-title="Move to Workspace (9)" { move-window-to-workspace 9; }
+    Super+Shift+Down hotkey-overlay-title="Move Down" { move-window-down-or-to-workspace-down; }
+    Super+Shift+I hotkey-overlay-title="Move to Workspace Up" { move-column-to-workspace-up; }
+    Super+Shift+J hotkey-overlay-title="Move Down" { move-window-down-or-to-workspace-down; }
+    Super+Shift+K hotkey-overlay-title="Move Up" { move-window-up-or-to-workspace-up; }
+    Super+Shift+Page_Down hotkey-overlay-title="Move to Workspace Down" { move-column-to-workspace-down; }
+    Super+Shift+Page_Up hotkey-overlay-title="Move to Workspace Up" { move-column-to-workspace-up; }
+    Super+Shift+U hotkey-overlay-title="Move to Workspace Down" { move-column-to-workspace-down; }
+    Super+Shift+Up hotkey-overlay-title="Move Up" { move-window-up-or-to-workspace-up; }
+    Super+U hotkey-overlay-title="Focus Workspace Down" { focus-workspace-down; }
+    Super+Up hotkey-overlay-title="Focus Up" { focus-window-or-workspace-up; }
+    Super+WheelScrollDown hotkey-overlay-title="Focus Workspace Down" { focus-workspace-down; }
+    Super+WheelScrollUp hotkey-overlay-title="Focus Workspace Up" { focus-workspace-up; }
+    Ctrl+Shift+Super+WheelScrollDown hotkey-overlay-title="Move Right" { move-column-right; }
+    Ctrl+Shift+Super+WheelScrollUp hotkey-overlay-title="Move Left" { move-column-left; }
+    F11 hotkey-overlay-title="Fullscreen" { fullscreen-window; }
+    Shift+Super+WheelScrollDown hotkey-overlay-title="Focus Right" { focus-column-right; }
+    Shift+Super+WheelScrollUp hotkey-overlay-title="Focus Left" { focus-column-left; }
+    Super+BracketLeft hotkey-overlay-title="Consume/Expel Left" { consume-or-expel-window-left; }
+    Super+BracketRight hotkey-overlay-title="Consume/Expel Right" { consume-or-expel-window-right; }
+    Super+C hotkey-overlay-title="Center Column" { center-column; }
+    Super+Comma hotkey-overlay-title="Consume Window" { consume-window-into-column; }
+    Super+Ctrl+F hotkey-overlay-title="Expand to Available Width" { expand-column-to-available-width; }
+    Super+End hotkey-overlay-title="Focus Last Column" { focus-column-last; }
+    Super+Equal hotkey-overlay-title="Set Column Width" { set-column-width "+10%"; }
+    Super+F hotkey-overlay-title="Maximize Column" { maximize-column; }
+    Super+G hotkey-overlay-title="Toggle Tabbed" { toggle-column-tabbed-display; }
+    Super+H hotkey-overlay-title="Focus Left" { focus-column-left; }
+    Super+Home hotkey-overlay-title="Focus First Column" { focus-column-first; }
+    Super+L hotkey-overlay-title="Focus Right" { focus-column-right; }
+    Super+Left hotkey-overlay-title="Focus Left" { focus-column-left; }
+    Super+Minus hotkey-overlay-title="Set Column Width" { set-column-width "-10%"; }
+    Super+Period hotkey-overlay-title="Expel Window" { expel-window-from-column; }
+    Super+Q hotkey-overlay-title="Close Window" { close-window; }
+    Super+Right hotkey-overlay-title="Focus Right" { focus-column-right; }
+    Super+Shift+C hotkey-overlay-title="Center Visible Columns" { center-visible-columns; }
+    Super+Shift+End hotkey-overlay-title="Move to Last" { move-column-to-last; }
+    Super+Shift+Equal hotkey-overlay-title="Set Window Height" { set-window-height "+10%"; }
+    Super+Shift+F hotkey-overlay-title="Fullscreen" { fullscreen-window; }
+    Super+Shift+H hotkey-overlay-title="Move Left" { move-column-left; }
+    Super+Shift+Home hotkey-overlay-title="Move to First" { move-column-to-first; }
+    Super+Shift+L hotkey-overlay-title="Move Right" { move-column-right; }
+    Super+Shift+Left hotkey-overlay-title="Move Left" { move-column-left; }
+    Super+Shift+Minus hotkey-overlay-title="Set Window Height" { set-window-height "+10%"; }
+    Super+Shift+Right hotkey-overlay-title="Move Right" { move-column-right; }
+    Super+Shift+V hotkey-overlay-title="Switch Floating/Tiling Focus" { switch-focus-between-floating-and-tiling; }
+    Super+T hotkey-overlay-title="Toggle Floating" { toggle-window-floating; }
+    Alt+Ctrl+T hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Ctrl+Print hotkey-overlay-title="Record Screen" { spawn "sh" "-c" "/home/nutty/.local/bin/rec"; }
+    Super+E hotkey-overlay-title="Open Files" { spawn "nautilus" "-w"; }
+    Super+Return hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Super+Shift+Y allow-when-locked=true hotkey-overlay-title="Wallpaper: Random" { spawn "sh" "-c" "/home/nutty/.local/bin/random_wallpaper"; }
+    Super+Escape hotkey-overlay-title="Toggle Shortcuts Inhibit" { toggle-keyboard-shortcuts-inhibit; }
+    Super+Tab hotkey-overlay-title="Toggle Overview" { toggle-overview; }
+    Super+W hotkey-overlay-title="Toggle Overview" { toggle-overview; }
+    Super+space hotkey-overlay-title="Keyboard Layouts: Next" { switch-layout "next"; }
+}
