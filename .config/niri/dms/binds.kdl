@@ -4,12 +4,12 @@ binds {
     Alt+space hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Task Manager: Focus or Toggle" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Print hotkey-overlay-title="Screenshot: Interactive" { spawn "dms" "ipc" "call" "niri" "screenshot"; }
-    Shift+Print allow-when-locked=true hotkey-overlay-title="Screenshot: Full Screen" { spawn "dms" "ipc" "call" "niri" "screenshotScreen"; }
+    Shift+Print hotkey-overlay-title="Screenshot: Full Screen" allow-when-locked=true { spawn "dms" "ipc" "call" "niri" "screenshotScreen"; }
     Shift+XF86AudioLowerVolume hotkey-overlay-title="Volume Down (1%)" { spawn "dms" "ipc" "call" "audio" "decrement" "1"; }
     Shift+XF86AudioRaiseVolume hotkey-overlay-title="Volume Up (1%)" { spawn "dms" "ipc" "call" "audio" "increment" "1"; }
     Super+A hotkey-overlay-title="Control Center: Toggle" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
-    Super+Alt+B hotkey-overlay-title="Media: Previous Track" allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
-    Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+Alt+B allow-when-locked=true hotkey-overlay-title="Media: Previous Track" { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    Super+Alt+L hotkey-overlay-title="Lock Screen" allow-when-locked=true { spawn "dms" "ipc" "call" "lock" "lock"; }
     Super+Alt+N allow-when-locked=true hotkey-overlay-title="Media: Next Track" { spawn "dms" "ipc" "call" "mpris" "next"; }
     Super+Alt+P allow-when-locked=true hotkey-overlay-title="Media: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     Super+D hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle" ""; }
@@ -23,7 +23,7 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Volume Down" { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
     XF86AudioMute allow-when-locked=true hotkey-overlay-title="Volume Mute Toggle" { spawn "dms" "ipc" "call" "audio" "mute"; }
     XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Volume Up" { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
-    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="Brightness Down" { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessDown hotkey-overlay-title="Brightness Down" allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="Brightness Up" { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     Ctrl+Super+WheelScrollDown hotkey-overlay-title="Move to Workspace Down" { move-column-to-workspace-down; }
     Ctrl+Super+WheelScrollUp hotkey-overlay-title="Move to Workspace Up" { move-column-to-workspace-up; }
@@ -107,7 +107,7 @@ binds {
     Ctrl+Print hotkey-overlay-title="Record Screen" { spawn "sh" "-c" "/home/nutty/.local/bin/rec"; }
     Super+E hotkey-overlay-title="Open Files" { spawn "nautilus" "-w"; }
     Super+Return hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
-    Super+Shift+Y allow-when-locked=true hotkey-overlay-title="Wallpaper: Random" { spawn "sh" "-c" "/home/nutty/.local/bin/random_wallpaper"; }
+    Super+Shift+Y allow-when-locked=true hotkey-overlay-title="Wallpaper: Random" { spawn "sh" "-c" "/home/nutty/.local/bin/random_wall"; }
     Super+Escape hotkey-overlay-title="Toggle Shortcuts Inhibit" { toggle-keyboard-shortcuts-inhibit; }
     Super+Tab hotkey-overlay-title="Toggle Overview" { toggle-overview; }
     Super+W hotkey-overlay-title="Toggle Overview" { toggle-overview; }

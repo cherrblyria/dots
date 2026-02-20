@@ -14,6 +14,7 @@ alias pls sudo
 
 # Dotfile
 alias dot "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+alias ldot "dot config status.showUntrackedFiles false && lazygit --git-dir $HOME/.dotfiles/ --work-tree $HOME && dot config status.showUntrackedFiles true"
 
 # Grep
 alias rg 'rg --color=always'

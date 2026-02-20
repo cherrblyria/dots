@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Configuration
 # ----------------
@@ -12,47 +12,47 @@ HISTORY_SIZE=50
 # Logic
 # ----------------
 
-# 1. Create the history file if it doesn't exist to avoid errors
+# 1. Initialize history file to prevent errors
 if [[ ! -f "$HISTORY_FILE" ]]; then
     touch "$HISTORY_FILE"
 fi
 
-# 2. Get all image files from the directory (supports spaces in filenames)
-# We find jpg, png, jpeg, and webp. Adjust extensions if needed.
-# We store the output in a variable.
+# 2. Retrieve all image files from the directory (supports spaces in filenames)
+# Supported formats: jpg, png, jpeg, and webp. Modify extensions as needed.
+# Store the output in a variable for processing.
 all_wallpapers=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" \))
 
 # 3. Filter out wallpapers that are already in the history
-# grep -v: Invert match (select lines NOT matching)
-# grep -x: Match the whole line (so "car.jpg" doesn't match "racecar.jpg")
-# grep -F: Treat patterns as fixed strings (safer for file paths with special chars)
-# grep -f: Read patterns (the history) from a file
+# grep -v: Invert match (select lines NOT matching the patterns)
+# grep -x: Match the whole line (exact match)
+# grep -F: Treat patterns as fixed strings (safer for file paths with special characters)
+# grep -f: Read patterns from the specified history file
 available_wallpapers=$(grep -vxF -f "$HISTORY_FILE" <<<"$all_wallpapers")
 
-# Fallback: If we've used all wallpapers (available list is empty),
-# reset by picking from the full list again.
+# Fallback: If all wallpapers have been used (available list is empty),
+# reset selection by picking from the full list again.
 if [[ -z "$available_wallpapers" ]]; then
     available_wallpapers="$all_wallpapers"
 fi
 
 # 4. Select one random wallpaper from the available list
-# shuf -n 1 shuffles the input and gives us the first line
+# shuf -n 1 shuffles the input and returns the first line
 selected_wallpaper=$(shuf -n 1 <<<"$available_wallpapers")
 
-# 5. Apply and Save
+# 5. Apply wallpaper and update history
 if [[ -n "$selected_wallpaper" ]]; then
-    # Set the wallpaper using your specific command
+    # Set the wallpaper using the desktop management system
     dms ipc wallpaper set "$selected_wallpaper"
 
-    # Append the selected path to the history file
+    # Append the selected wallpaper path to the history file
     echo "$selected_wallpaper" >>"$HISTORY_FILE"
 
-    # Trim the history file to keep only the last N lines
-    # We use a temp file to safely overwrite the original
+    # Trim the history file to maintain only the last N entries
+    # Use a temporary file to safely overwrite the original
     tail -n "$HISTORY_SIZE" "$HISTORY_FILE" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
 
-    echo "Wallpaper set to: $selected_wallpaper"
+    echo "Wallpaper successfully set to: $selected_wallpaper"
 else
-    echo "Error: No wallpapers found in $WALLPAPER_DIR"
+    echo "Error: No wallpaper files found in $WALLPAPER_DIR"
     exit 1
 fi
