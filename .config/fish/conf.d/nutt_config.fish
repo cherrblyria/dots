@@ -1,5 +1,7 @@
+# ENV
 set -Ux GOPATH "$HOME/.go"
 
+# PATH
 fish_add_path \
     "$HOME/.local/bin" \
     "$HOME/.go/bin" \
@@ -13,11 +15,11 @@ alias pls sudo
 # Dotfile
 alias dot "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
-# Search & Files
+# Grep
 alias rg 'rg --color=always'
 alias grep 'grep --color=auto'
 
-# LS family (using eza)
+# LS family
 alias ls 'eza --group-directories-first --icons'
 alias l 'ls -lAh'
 alias la 'ls -Ah'
