@@ -3,7 +3,7 @@ Description=Random Dank Material Shell's Wallpaper Timer
 
 [Timer]
 OnBootSec=5min
-OnActivateSec=5min
+OnUnitActiveSec=5min
 Persistent=true
 Unit=random_wallpaper.service
 
