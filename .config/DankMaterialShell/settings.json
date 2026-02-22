@@ -306,8 +306,8 @@
   "matugenTemplateVscode": true,
   "matugenTemplateEmacs": false,
   "showDock": true,
-  "dockAutoHide": false,
-  "dockSmartAutoHide": true,
+  "dockAutoHide": true,
+  "dockSmartAutoHide": false,
   "dockGroupByApp": true,
   "dockOpenOnOverview": true,
   "dockPosition": 1,
@@ -603,8 +603,84 @@
   ],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
-  "desktopWidgetGridSettings": {},
-  "desktopWidgetInstances": [],
+  "desktopWidgetGridSettings": {
+    "eDP-1": {
+      "enabled": true,
+      "size": 10
+    }
+  },
+  "desktopWidgetInstances": [
+    {
+      "id": "dw_1771803459478_ce764sqor",
+      "widgetType": "dankDesktopWeather",
+      "name": "Dank Desktop Weather",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "showOnOverlay": false,
+        "showOnOverview": false,
+        "showOnOverviewOnly": false,
+        "viewMode": "compact"
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 80,
+          "height": 80,
+          "x": 930,
+          "y": 680
+        }
+      }
+    },
+    {
+      "id": "dw_1771803593002_4tpw9anom",
+      "widgetType": "mediaPlayer",
+      "name": "Media Player",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "borderOpacity": 100
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 340,
+          "height": 200,
+          "x": 1020,
+          "y": 560
+        }
+      }
+    },
+    {
+      "id": "dw_1771803698342_yi6ybqwiw",
+      "widgetType": "desktopClock",
+      "name": "Desktop Clock",
+      "enabled": true,
+      "config": {
+        "style": "stacked",
+        "transparency": 0.8,
+        "colorMode": "primary",
+        "customColor": "#ffffff",
+        "showDate": true,
+        "showAnalogNumbers": false,
+        "showAnalogSeconds": true,
+        "displayPreferences": [
+          "all"
+        ],
+        "showDigitalSeconds": true
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 80,
+          "height": 110,
+          "x": 930,
+          "y": 560
+        }
+      }
+    }
+  ],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {
     "dms_settings_search": {

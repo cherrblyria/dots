@@ -7,6 +7,9 @@
     "pinnedKeys": [
       "niri:Super+Ctrl+K",
       "niri:Super+Ctrl+J"
+    ],
+    "providers": [
+      "niri"
     ]
   },
   "dankNotepadModule": {
@@ -27,7 +30,8 @@
     "enabled": false
   },
   "emojiLauncher": {
-    "enabled": true
+    "enabled": true,
+    "trigger": ":"
   },
   "dankHooks": {
     "enabled": false,
