@@ -1,0 +1,6 @@
+[Unit]
+Description=Random Dank Material Shell's Wallpaper
+
+[Service]
+Type=oneshot
+ExecStart="/home/nutty/.local/bin/random_wall"

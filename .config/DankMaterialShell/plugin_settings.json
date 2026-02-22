@@ -1,17 +1,67 @@
 {
+  "dankGifSearch": {
+    "enabled": false
+  },
   "dankLauncherKeys": {
     "enabled": true,
-    "pinnedKeys": []
+    "pinnedKeys": [
+      "niri:Super+Ctrl+K",
+      "niri:Super+Ctrl+J"
+    ]
   },
   "dankNotepadModule": {
     "enabled": true
+  },
+  "dankPomodoroTimer": {
+    "enabled": false,
+    "completedPomodoros-2026-02-17": 1,
+    "completedPomodoros-2026-02-18": 6,
+    "autoSetDND": true
   },
   "dankBatteryAlerts": {
     "enabled": true,
     "warningThreshold": 15,
     "criticalThreshold": 5
   },
+  "dankStickerSearch": {
+    "enabled": false
+  },
   "emojiLauncher": {
     "enabled": true
+  },
+  "dankHooks": {
+    "enabled": false,
+    "lightMode": "",
+    "nightMode": "",
+    "batteryLevel": "/home/nutty/.local/bin/random_wallpaper",
+    "batteryCharging": "",
+    "batteryPluggedIn": "",
+    "hookPowerRequestLock": "",
+    "sessionLocked": "",
+    "sessionUnlocked": "",
+    "doNotDisturb": "",
+    "mediaPlaying": "",
+    "brightness": "",
+    "micMute": "",
+    "audioMute": "",
+    "audioVolume": "",
+    "ethernetConnected": "",
+    "wifiSSID": "",
+    "wifiConnected": "",
+    "idleInhibit": "",
+    "hookResumeFromSleep": "",
+    "hookPowerSuspend": "",
+    "hookPowerMonitorOn": "",
+    "hookPowerMonitorOff": "",
+    "theme": ""
+  },
+  "wallpaperShufflerPlugin": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "",
+    "calcEngine": "qalc",
+    "noTrigger": true
   }
 }

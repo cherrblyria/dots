@@ -17,7 +17,7 @@
   "widgetColorMode": "default",
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
-  "cornerRadius": 16,
+  "cornerRadius": 18,
   "niriLayoutGapsOverride": 9,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": 1,
@@ -192,7 +192,8 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "spotlightSectionViewModes": {
-    "apps": "list"
+    "apps": "list",
+    "plugin_emojiLauncher": "grid"
   },
   "appDrawerSectionViewModes": {
     "apps": "list",
@@ -207,7 +208,7 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "iconTheme": "Papirus",
   "cursorSettings": {
     "theme": "Vimix-white-cursors",
@@ -281,7 +282,7 @@
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
-  "terminalsAlwaysDark": true,
+  "terminalsAlwaysDark": false,
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
   "matugenTemplateNiri": true,
@@ -315,7 +316,7 @@
   "dockMargin": 8,
   "dockIconSize": 48,
   "dockIndicatorStyle": "circle",
-  "dockBorderEnabled": false,
+  "dockBorderEnabled": true,
   "dockBorderColor": "surfaceText",
   "dockBorderOpacity": 0.15,
   "dockBorderThickness": 1,
@@ -347,7 +348,7 @@
   "maxFprintTries": 15,
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
-  "lockScreenNotificationMode": 0,
+  "lockScreenNotificationMode": 1,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,

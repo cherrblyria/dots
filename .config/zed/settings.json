@@ -7,43 +7,59 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "provider": "zed",
-    "mode": "eager"
-  },
-  "tab_bar": {
-    "show": true,
-  },
-  "indent_guides": {
-    "coloring": "indent_aware",
-  },
-  "toolbar": {
-    "breadcrumbs": true,
-    "quick_actions": false,
-    "selections_menu": false,
-  },
   "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
+      "enable_thinking": false,
+    },
     "show_turn_stats": true,
     "dock": "left",
-    "favorite_models": [],
-    "model_parameters": [],
   },
+  "agent_servers": {
+    "github-copilot": {
+      "type": "registry",
+    },
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font Propo",
+  "buffer_font_size": 16,
   "collaboration_panel": {
     "dock": "right",
   },
-  "notification_panel": {
-    "dock": "left",
+  "edit_predictions": {
+    "provider": "copilot",
+    "mode": "eager",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
   },
   "git_panel": {
     "dock": "right",
   },
+  "icon_theme": "Material Icon Theme",
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
+  "inlay_hints": {
+    "show_background": false,
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "binary": {
+        "path": "/usr/bin/rust-analyzer",
+      },
+    },
+  },
+  "notification_panel": {
+    "dock": "left",
+  },
   "outline_panel": {
     "dock": "right",
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
-  "terminal": {
-    "copy_on_select": true,
-    "blinking": "on",
+  "preview_tabs": {
+    "enabled": false,
   },
   "project_panel": {
     "entry_spacing": "comfortable",
@@ -51,21 +67,36 @@
     "button": true,
     "sticky_scroll": false,
   },
-  "inlay_hints": {
-    "show_background": false,
+  "relative_line_numbers": "enabled",
+  "session": {
+    "trust_all_worktrees": true,
   },
   "show_whitespaces": "all",
-  "always_treat_brackets_as_autoclosed": false,
+  "tab_bar": {
+    "show": true,
+  },
   "tab_size": 2,
-  "vim": {
-    "use_smartcase_find": true,
-    "toggle_relative_line_numbers": false,
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
   },
-  "relative_line_numbers": "enabled",
-  "which_key": {
-    "enabled": true,
+  "terminal": {
+    "copy_on_select": true,
+    "blinking": "on",
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font Propo",
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night",
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
   "ui_font_fallbacks": [
     "JetBrainsMono Nerd Font",
     "Noto Sans Thai",
@@ -79,39 +110,15 @@
   "ui_font_features": {
     "calt": true,
   },
+  "ui_font_size": 16,
   "use_system_path_prompts": false,
   "use_system_prompts": false,
-  "telemetry": {
-    "diagnostics": true,
-    "metrics": false,
-  },
-  "session": {
-    "trust_all_worktrees": false,
+  "vim": {
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false,
   },
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16.0,
-  "theme": {
-    "mode": "system",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night",
-  },
-  "lsp": {
-    "rust-analyzer": {
-      "binary": {
-        "path": "/usr/bin/rust-analyzer",
-      },
-    },
-  },
-  "preview_tabs": {
-    "enabled": false,
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": true,
-    },
-  },
-  "title_bar": {
-    "show_branch_icon": true,
+  "which_key": {
+    "enabled": true,
   },
 }

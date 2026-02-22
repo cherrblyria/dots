@@ -5,4 +5,12 @@
 window-rule {
     match app-id="^org.gnome.NautilusPreviewer$"
     open-floating true
+    draw-border-with-background true
+}
+
+// @id=wr_1771657560038566102 @name=vktablet
+window-rule {
+    match app-id="^vktablet$"
+    open-floating true
+    open-focused false
 }
