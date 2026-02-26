@@ -1,12 +1,13 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
-  "customThemeFile": "/home/nutty/.config/DankMaterialShell/themes/catppuccin/theme.json",
+  "customThemeFile": "/home/nutty/.config/DankMaterialShell/themes/peaceAndQuiet/theme.json",
   "registryThemeVariants": {
     "everforest": "hard",
     "rosePine": "rosePine",
     "petrichor": "green",
-    "gruvboxMaterial": "hard"
+    "gruvboxMaterial": "hard",
+    "peaceAndQuiet": "salmon"
   },
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
@@ -87,10 +88,17 @@
     {
       "id": "brightnessSlider",
       "enabled": true,
-      "width": 50
+      "width": 50,
+      "instanceId": "mm3a5qeppk7tags47oje16o6z3j1c3",
+      "deviceName": ""
     },
     {
       "id": "wifi",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "bluetooth",
       "enabled": true,
       "width": 50
     },
@@ -105,9 +113,9 @@
       "width": 25
     },
     {
-      "id": "bluetooth",
+      "id": "nightMode",
       "enabled": true,
-      "width": 50
+      "width": 25
     },
     {
       "id": "doNotDisturb",
@@ -115,19 +123,11 @@
       "width": 25
     },
     {
-      "id": "nightMode",
+      "id": "diskUsage",
       "enabled": true,
-      "width": 25
-    },
-    {
-      "id": "darkMode",
-      "enabled": true,
-      "width": 25
-    },
-    {
-      "id": "idleInhibitor",
-      "enabled": true,
-      "width": 25
+      "width": 50,
+      "instanceId": "mm3a5t96f7zik48q1nuur5dcnfdpld",
+      "mountPath": "/"
     },
     {
       "id": "battery",
@@ -211,8 +211,8 @@
   "networkPreference": "wifi",
   "iconTheme": "Papirus",
   "cursorSettings": {
-    "theme": "Vimix-white-cursors",
-    "size": 24,
+    "theme": "M200",
+    "size": 128,
     "niri": {
       "hideWhenTyping": true,
       "hideAfterInactiveMs": 1000
@@ -611,6 +611,29 @@
   },
   "desktopWidgetInstances": [
     {
+      "id": "dw_1771803593002_4tpw9anom",
+      "widgetType": "mediaPlayer",
+      "name": "Media Player",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [],
+        "borderOpacity": 100,
+        "showOnOverlay": false,
+        "showOnOverview": false,
+        "showOnOverviewOnly": false,
+        "clickThrough": false
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 340,
+          "height": 200,
+          "x": 930,
+          "y": 560
+        }
+      },
+      "group": null
+    },
+    {
       "id": "dw_1771803459478_ce764sqor",
       "widgetType": "dankDesktopWeather",
       "name": "Dank Desktop Weather",
@@ -628,30 +651,11 @@
         "eDP-1": {
           "width": 80,
           "height": 80,
-          "x": 930,
+          "x": 1280,
           "y": 680
         }
-      }
-    },
-    {
-      "id": "dw_1771803593002_4tpw9anom",
-      "widgetType": "mediaPlayer",
-      "name": "Media Player",
-      "enabled": true,
-      "config": {
-        "displayPreferences": [
-          "all"
-        ],
-        "borderOpacity": 100
       },
-      "positions": {
-        "eDP-1": {
-          "width": 340,
-          "height": 200,
-          "x": 1020,
-          "y": 560
-        }
-      }
+      "group": null
     },
     {
       "id": "dw_1771803698342_yi6ybqwiw",
@@ -675,13 +679,20 @@
         "eDP-1": {
           "width": 80,
           "height": 110,
-          "x": 930,
+          "x": 1280,
           "y": 560
         }
-      }
+      },
+      "group": null
     }
   ],
-  "desktopWidgetGroups": [],
+  "desktopWidgetGroups": [
+    {
+      "id": "dwg_1771843257962_066co3u58",
+      "name": "1",
+      "collapsed": false
+    }
+  ],
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"

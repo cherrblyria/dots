@@ -4,8 +4,8 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 cursor {
-    xcursor-theme "Vimix-white-cursors"
-    xcursor-size 24
+    xcursor-theme "M200"
+    xcursor-size 128
     hide-when-typing
     hide-after-inactive-ms 1000
 }
