@@ -4,7 +4,7 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 cursor {
-    xcursor-theme "M200"
+    xcursor-theme "Yuurei-Angel"
     xcursor-size 128
     hide-when-typing
     hide-after-inactive-ms 1000
