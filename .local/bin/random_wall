@@ -6,8 +6,8 @@
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 # File to store the history of used wallpapers
 HISTORY_FILE="$HOME/.cache/wallpaper_history"
-# How many previous wallpapers to remember (avoid repeating these)
-HISTORY_SIZE=50
+# Number of available wallpapers in the random pool
+RANDOMNESS=50
 
 # Logic
 # ----------------
@@ -21,6 +21,45 @@ fi
 # Supported formats: jpg, png, jpeg, and webp. Modify extensions as needed.
 # Store the output in a variable for processing.
 all_wallpapers=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" -o -name "*.webp" \))
+
+if [[ -z "$all_wallpapers" ]]; then
+    echo "Error: No wallpaper files found in $WALLPAPER_DIR"
+    exit 1
+fi
+
+# Calculate dynamic history size
+total_wallpapers=$(wc -l <<<"$all_wallpapers")
+HISTORY_SIZE=$((total_wallpapers - RANDOMNESS))
+
+# Ensure history size is not negative
+if (( HISTORY_SIZE < 0 )); then
+    HISTORY_SIZE=0
+fi
+
+# Migration: Fill history if it hasn't reached the required capacity
+current_history_size=$(wc -l < "$HISTORY_FILE")
+if (( current_history_size < HISTORY_SIZE )); then
+    needed=$((HISTORY_SIZE - current_history_size))
+    
+    # Get wallpapers not currently in history
+    if [[ -s "$HISTORY_FILE" ]]; then
+        unseen_wallpapers=$(grep -vxF -f "$HISTORY_FILE" <<<"$all_wallpapers")
+    else
+        unseen_wallpapers="$all_wallpapers"
+    fi
+    
+    # Pad the history file with random unseen wallpapers
+    if [[ -n "$unseen_wallpapers" ]]; then
+        shuf -n "$needed" <<<"$unseen_wallpapers" >> "$HISTORY_FILE"
+    fi
+elif (( current_history_size > HISTORY_SIZE )); then
+    # Trim history if it exceeds the maximum (e.g., wallpapers were deleted)
+    if (( HISTORY_SIZE > 0 )); then
+        tail -n "$HISTORY_SIZE" "$HISTORY_FILE" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+    else
+        > "$HISTORY_FILE"
+    fi
+fi
 
 # 3. Filter out wallpapers that are already in the history
 # grep -v: Invert match (select lines NOT matching the patterns)
@@ -47,12 +86,15 @@ if [[ -n "$selected_wallpaper" ]]; then
     # Append the selected wallpaper path to the history file
     echo "$selected_wallpaper" >>"$HISTORY_FILE"
 
-    # Trim the history file to maintain only the last N entries
-    # Use a temporary file to safely overwrite the original
-    tail -n "$HISTORY_SIZE" "$HISTORY_FILE" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+    # Trim the history file to maintain the dynamic history size
+    if (( HISTORY_SIZE > 0 )); then
+        tail -n "$HISTORY_SIZE" "$HISTORY_FILE" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+    else
+        > "$HISTORY_FILE" # Clear file if history size is 0
+    fi
 
     echo "Wallpaper successfully set to: $selected_wallpaper"
 else
-    echo "Error: No wallpaper files found in $WALLPAPER_DIR"
+    echo "Error: No wallpaper files available to select."
     exit 1
 fi
