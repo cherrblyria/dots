@@ -18,6 +18,13 @@ alias zed zeditor
 alias v nvim
 alias gem gemini
 
+# Dev
+alias c cargo
+alias cr 'cargo run'
+alias cb 'cargo build'
+alias ct 'cargo test'
+alias ccb 'cargo clean'
+
 # Dotfile
 alias dot "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 alias ldot "dot config status.showUntrackedFiles false && lazygit --git-dir $HOME/.dotfiles/ --work-tree $HOME && dot config status.showUntrackedFiles true"
