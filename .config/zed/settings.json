@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "text_rendering_mode": "platform_default",
+  "ui_font_family": ".ZedSans",
+  "restore_on_startup": "launchpad",
   "context_servers": {
     "mcp-server-context7": {
       "enabled": true,
@@ -78,6 +82,7 @@
   },
   "relative_line_numbers": "enabled",
   "session": {
+    "restore_unsaved_buffers": false,
     "trust_all_worktrees": true,
   },
   "show_whitespaces": "all",
