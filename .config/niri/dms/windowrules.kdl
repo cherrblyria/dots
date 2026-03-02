@@ -14,3 +14,9 @@ window-rule {
     open-floating true
     open-focused false
 }
+
+// @id=wr_1772214229693980798 @name=sober
+window-rule {
+    match app-id="^sober$" title="^Servers$"
+    open-floating true
+}

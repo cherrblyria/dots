@@ -28,6 +28,7 @@
   "mangoLayoutGapsOverride": -1,
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
+  "firstDayOfWeek": -1,
   "use24HourClock": true,
   "showSeconds": false,
   "padHours12Hour": false,
@@ -42,6 +43,15 @@
   "modalAnimationSpeed": 2,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
+  "m3ElevationEnabled": true,
+  "m3ElevationIntensity": 12,
+  "m3ElevationOpacity": 30,
+  "m3ElevationColorMode": "default",
+  "m3ElevationLightDirection": "top",
+  "m3ElevationCustomColor": "#000000",
+  "modalElevationEnabled": true,
+  "popoutElevationEnabled": true,
+  "barElevationEnabled": false,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": true,
@@ -216,7 +226,7 @@
   "networkPreference": "wifi",
   "iconTheme": "Papirus",
   "cursorSettings": {
-    "theme": "Yuurei-Angel",
+    "theme": "M200",
     "size": 128,
     "niri": {
       "hideWhenTyping": true,
@@ -273,10 +283,14 @@
   "launchPrefix": "",
   "brightnessDevicePins": {},
   "wifiNetworkPins": {
-    "preferredWifi": ["RAKSA_5G"]
+    "preferredWifi": [
+      "RAKSA_5G"
+    ]
   },
   "bluetoothDevicePins": {
-    "preferredDevice": ["41:42:75:14:C6:F1"]
+    "preferredDevice": [
+      "41:42:75:14:C6:F1"
+    ]
   },
   "audioInputDevicePins": {},
   "audioOutputDevicePins": {},
@@ -405,13 +419,17 @@
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
   "screenPreferences": {
-    "wallpaper": ["all"]
+    "wallpaper": [
+      "all"
+    ]
   },
   "showOnLastDisplay": {},
   "niriOutputSettings": {
     "eDP-1": {
       "hotCorners": {
-        "corners": ["top-left"]
+        "corners": [
+          "top-left"
+        ]
       },
       "layout": null
     }
@@ -422,7 +440,9 @@
       "profile_1771405592547_qt8k9g": {
         "id": "profile_1771405592547_qt8k9g",
         "name": "Main",
-        "outputSet": ["eDP-1"],
+        "outputSet": [
+          "eDP-1"
+        ],
         "createdAt": 1771405592547,
         "updatedAt": 1771405592547
       }
@@ -440,7 +460,9 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 2,
-      "screenPreferences": ["all"],
+      "screenPreferences": [
+        "all"
+      ],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
@@ -555,7 +577,9 @@
   "desktopClockY": -1,
   "desktopClockWidth": 280,
   "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": ["all"],
+  "desktopClockDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -592,7 +616,9 @@
   "systemMonitorY": -1,
   "systemMonitorWidth": 320,
   "systemMonitorHeight": 480,
-  "systemMonitorDisplayPreferences": ["all"],
+  "systemMonitorDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {
@@ -632,7 +658,9 @@
       "name": "Dank Desktop Weather",
       "enabled": true,
       "config": {
-        "displayPreferences": ["all"],
+        "displayPreferences": [
+          "all"
+        ],
         "showOnOverlay": false,
         "showOnOverview": false,
         "showOnOverviewOnly": false,
@@ -661,7 +689,9 @@
         "showDate": true,
         "showAnalogNumbers": false,
         "showAnalogSeconds": true,
-        "displayPreferences": ["all"],
+        "displayPreferences": [
+          "all"
+        ],
         "showDigitalSeconds": true
       },
       "positions": {
@@ -695,5 +725,5 @@
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
-  "configVersion": 5
+  "configVersion": 6
 }

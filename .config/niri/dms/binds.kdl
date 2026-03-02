@@ -8,7 +8,7 @@ binds {
     Shift+XF86AudioLowerVolume hotkey-overlay-title="Volume Down (1%)" { spawn "dms" "ipc" "call" "audio" "decrement" "1"; }
     Shift+XF86AudioRaiseVolume hotkey-overlay-title="Volume Up (1%)" { spawn "dms" "ipc" "call" "audio" "increment" "1"; }
     Super+A hotkey-overlay-title="Control Center: Toggle" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
-    Super+Alt+B hotkey-overlay-title="Media: Previous Track" allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    Super+Alt+B allow-when-locked=true hotkey-overlay-title="Media: Previous Track" { spawn "dms" "ipc" "call" "mpris" "previous"; }
     Super+Alt+L allow-when-locked=true hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Super+Alt+N allow-when-locked=true hotkey-overlay-title="Media: Next Track" { spawn "dms" "ipc" "call" "mpris" "next"; }
     Super+Alt+P allow-when-locked=true hotkey-overlay-title="Media: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
@@ -16,15 +16,18 @@ binds {
     Super+N hotkey-overlay-title="Notifications: Toggle" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
     Super+S hotkey-overlay-title="Notepad: Toggle" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Super+Shift+Comma hotkey-overlay-title="Settings: Focus or Toggle" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
-    Super+Shift+XF86AudioRaiseVolume hotkey-overlay-title="Audio Output: Cycle" { spawn "dms" "ipc" "call" "audio" "cycleoutput"; }
     Super+Slash hotkey-overlay-title="Keybinds Cheatsheet: Toggle" { spawn "dms" "ipc" "call" "keybinds" "toggle" "niri"; }
     Super+V hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Super+XF86AudioLowerVolume hotkey-overlay-title="Volume Mute Toggle" { spawn "dms" "ipc" "call" "audio" "mute"; }
+    Super+XF86AudioRaiseVolume hotkey-overlay-title="Audio Output: Cycle" { spawn "dms" "ipc" "call" "audio" "cycleoutput"; }
+    Super+XF86MonBrightnessDown hotkey-overlay-title="Brightness Down" { spawn "dms" "ipc" "call" "brightness" "decrement" "100" ""; }
+    Super+XF86MonBrightnessUp hotkey-overlay-title="Brightness Up" { spawn "dms" "ipc" "call" "brightness" "increment" "100" ""; }
     Super+Y hotkey-overlay-title="Wallpaper Browser" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
     XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Volume Down" { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
     XF86AudioMute hotkey-overlay-title="Volume Mute Toggle" allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
     XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Volume Up" { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
-    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="Brightness Down" { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
-    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="Brightness Up" { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown hotkey-overlay-title="Brightness Down" allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86MonBrightnessUp hotkey-overlay-title="Brightness Up" allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     Ctrl+Super+WheelScrollDown hotkey-overlay-title="Move to Workspace Down" { move-column-to-workspace-down; }
     Ctrl+Super+WheelScrollUp hotkey-overlay-title="Move to Workspace Up" { move-column-to-workspace-up; }
     Super+1 hotkey-overlay-title="Focus Workspace (1)" { focus-workspace 1; }

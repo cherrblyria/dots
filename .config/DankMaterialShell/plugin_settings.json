@@ -5,7 +5,9 @@
   "dankLauncherKeys": {
     "enabled": true,
     "pinnedKeys": [],
-    "providers": ["niri"]
+    "providers": [
+      "niri"
+    ]
   },
   "dankNotepadModule": {
     "enabled": true
