@@ -40,6 +40,26 @@ alias la 'ls -Ah'
 abbr --add te 'ls -T --level=2'
 abbr --add tea 'ls -AhT --level=2'
 
+# Yazi
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        # builtin cd -- "$cwd"
+        z -- "$cwd"
+        rm -f -- "$tmp"
+    end
+end
+
+function yc
+    set tmp (mktemp -t "yazi-chooser.XXXXXX")
+    yazi $argv --chooser-file="$tmp"
+    if test -s "$tmp"
+        echo (cat "$tmp")
+        rm -f -- "$tmp"
+    end
+end
+
 if status is-interactive
     if command -v zoxide >/dev/null
         zoxide init fish | source
