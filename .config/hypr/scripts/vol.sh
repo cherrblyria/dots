@@ -7,6 +7,12 @@ up)
 down)
   wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
   ;;
+lup)
+  wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+
+  ;;
+ldown)
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+  ;;
 mute)
   wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
   ;;

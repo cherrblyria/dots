@@ -15,8 +15,8 @@ progress-color=over #665c55
 max-icon-size=64
 icon-border-radius=10
 
-outer-margin=10
-margin=0,0,10,0
+outer-margin=15
+margin=0,0,15,0
 padding=5
 
 default-timeout=7000
