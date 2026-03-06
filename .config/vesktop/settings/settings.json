@@ -4,7 +4,9 @@
     "useQuickCss": true,
     "themeLinks": [],
     "eagerPatches": false,
-    "enabledThemes": [],
+    "enabledThemes": [
+        "midnight-vencord.theme.css"
+    ],
     "enableReactDevtools": false,
     "frameless": false,
     "transparent": false,
@@ -438,7 +440,9 @@
         },
         "SpotifyControls": {
             "enabled": true,
-            "hoverControls": false
+            "hoverControls": false,
+            "useSpotifyUris": false,
+            "previousButtonRestartsTrack": true
         },
         "SpotifyCrack": {
             "enabled": false
@@ -489,7 +493,9 @@
             "enabled": false
         },
         "USRBG": {
-            "enabled": false
+            "enabled": true,
+            "voiceBackground": true,
+            "nitroFirst": true
         },
         "ValidReply": {
             "enabled": false
@@ -571,6 +577,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1772681261937
+        "settingsSyncVersion": 1772762476717
     }
 }
