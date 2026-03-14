@@ -33,8 +33,10 @@ alias gcm 'git commit -m'
 # Cargo
 alias c cargo
 alias cr 'cargo run'
+alias ca 'cargo add'
 alias cb 'cargo build'
 alias ct 'cargo test'
+alias cc 'cargo check'
 alias ccb 'cargo clean'
 
 # Python

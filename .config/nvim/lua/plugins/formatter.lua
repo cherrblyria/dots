@@ -17,6 +17,7 @@ return {
           lua = { "stylua" },
           luau = { "stylua" },
           python = { "black" },
+          rust = { "rustfmt" },
           sh = { "shfmt" },
           toml = { "taplo" },
         },
