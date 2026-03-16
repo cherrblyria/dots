@@ -58,7 +58,7 @@ alias f fzf
 alias rg 'rg --color=always'
 alias grep 'grep --color=auto'
 
-alias ct 'bat -Pp'
+alias b 'bat -Pp'
 alias tch touch
 alias mk touch
 alias mkd mkdir
