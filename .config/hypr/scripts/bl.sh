@@ -7,6 +7,12 @@ up)
 down)
   brightnessctl set 10%-
   ;;
+lup)
+  brightnessctl set 1%+
+  ;;
+ldown)
+  brightnessctl set 1%-
+  ;;
 esac
 
 # Get current brightness percentage
