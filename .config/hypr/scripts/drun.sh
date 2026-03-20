@@ -7,7 +7,7 @@ shopt -s nullglob
 APPS=$(awk -F= '
     FNR == 1 {
         n = split(FILENAME, path, "/")
-        base = path[n] # ดึงมาแค่ชื่อไฟล์ เช่น nvim.desktop
+        base = path[n]
 
         if (seen[base]) { skip = 1; next }
 
@@ -35,7 +35,7 @@ APPS=$(awk -F= '
             }
         }
     }
-' /dev/null ~/.local/share/applications/*.desktop /usr/share/applications/*.desktop 2>/dev/null)
+' /dev/null ~/.local/share/applications/*.desktop /usr/share/applications/*.desktop /var/lib/flatpak/exports/share/applications/*.desktop 2>/dev/null)
 
 CHOICE=$(echo "$APPS" | awk -F':::' '{print $1}' | sort -u | eval wmenu "$(cat "$HOME"/.config/wmenu)" -p "Apps")
 
