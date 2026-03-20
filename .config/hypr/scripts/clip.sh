@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-pkill wmenu || true
+pkill rofi || true
 
-cliphist list | eval wmenu "$(cat "$HOME"/.config/wmenu)" -p "Clipboard" | cliphist decode | wl-copy
+cliphist list | eval rofi -dmenu -display-columns 2 -p "clipboard" | cliphist decode | wl-copy

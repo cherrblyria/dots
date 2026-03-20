@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-pkill wmenu || true
+pkill rofi || true
 
-FLAG=$(cat "$HOME"/.config/wmenu)
-
-case "$(printf "kill\nkillall\nzzz\nreboot\nshutdown" | eval wmenu "${FLAG}" -p "System")" in
+case "$(printf "kill\nkillall\nzzz\nreboot\nshutdown" | rofi -dmenu -config "$HOME"/.config/rofi/compact.rasi -p "system")" in
 kill)
   ps -u "$USER" -o pid,comm,%cpu,%mem |
     eval wmenu "${FLAG}" -p "Kill" |

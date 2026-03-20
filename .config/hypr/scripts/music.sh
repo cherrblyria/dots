@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PLAYERS_PRIORITY=("spotify" "mpd" "brave")
+PLAYERS_PRIORITY=("spotify" "mpd" "chromium" "brave")
 
 get_active_player() {
   all_players=$(playerctl -l 2>/dev/null)

@@ -54,6 +54,7 @@ alias ldot "dot config status.showUntrackedFiles false && lazygit --git-dir $HOM
 
 # Search & Files
 abbr --add ffind 'fd --type f'
+abbr --add ff 'fd --type f | fzf'
 alias f fzf
 alias rg 'rg --color=always'
 alias grep 'grep --color=auto'
@@ -108,6 +109,12 @@ function yc
         echo (cat "$tmp")
         rm -f -- "$tmp"
     end
+end
+
+# yt-dlp
+function getaudio
+    yt-dlp -x --audio-quality 0 --audio-format opus $argv[1]
+    mpc update
 end
 
 if status is-interactive
