@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function yc() {
-  local tmp=$(mktemp -t "yazi-chooser.XXXXXX")
+  tmp=$(mktemp -t "yazi-chooser.XXXXXX")
   yazi "$@" --chooser-file="$tmp"
   if [ -s "$tmp" ]; then
     cat "$tmp"
@@ -9,7 +9,8 @@ function yc() {
   fi
 }
 
+WAL_PATH="$HOME"/.config/hypr/wal
 SELECTED="$(yc "$HOME"/Pictures/Wallpapers)"
 
-ln -sf "${SELECTED}" "$HOME"/.config/hypr/wal
+ln -sf "${SELECTED}" "${WAL_PATH}"
 hyprctl hyprpaper wallpaper ,"$HOME/.config/hypr/wal"

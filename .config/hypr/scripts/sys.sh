@@ -2,16 +2,16 @@
 
 pkill rofi || true
 
-case "$(printf "kill\nkillall\nzzz\nreboot\nshutdown" | rofi -dmenu -config "$HOME"/.config/rofi/compact.rasi -p "system")" in
+case "$(printf "kill\nkillall\nzzz\nreboot\nshutdown" | rofi -dmenu -theme-str 'listview { lines: 5; } window { width: 16%; }' -p "system")" in
 kill)
   ps -u "$USER" -o pid,comm,%cpu,%mem |
-    eval wmenu "${FLAG}" -p "Kill" |
+    rofi -dmenu -theme-str "window { width: 23%;}" -p "kill" |
     awk '{print $1}' |
     xargs -r kill
   ;;
 killall)
   ps -u "$USER" -o pid,comm,%cpu,%mem |
-    eval wmenu "${FLAG}" -p "Kill" |
+    rofi -dmenu -theme-str "window { width: 23%;}" -p "killall" |
     awk '{print $2}' |
     xargs -r pkill
   ;;
