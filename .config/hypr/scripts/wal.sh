@@ -12,5 +12,10 @@ function yc() {
 WAL_PATH="$HOME"/.config/hypr/wal
 SELECTED="$(yc "$HOME"/Pictures/Wallpapers)"
 
-ln -sf "${SELECTED}" "${WAL_PATH}"
-hyprctl hyprpaper wallpaper ,"$HOME/.config/hypr/wal"
+if [ "$(readlink -f "$WAL_PATH")" != "$(readlink -f "$SELECTED")" ] && [[ -n "$SELECTED" ]]; then
+  ln -sf "${SELECTED}" "${WAL_PATH}"
+  hyprctl hyprpaper wallpaper ,"$HOME/.config/hypr/wal"
+  exit 0
+else
+  exit 1
+fi
