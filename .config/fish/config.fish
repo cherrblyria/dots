@@ -64,6 +64,10 @@ alias tch touch
 alias mk touch
 alias mkd mkdir
 
+alias ... 'z ../..'
+alias .... 'z ../../..'
+alias ..... 'z ../../../..'
+
 # LS family
 alias ls 'eza --group-directories-first --icons'
 alias l 'ls -lAh'

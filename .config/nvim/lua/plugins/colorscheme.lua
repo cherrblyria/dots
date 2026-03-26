@@ -19,14 +19,39 @@ return {
       invert_selection = false,
       invert_signs = false,
       invert_tabline = false,
-      inverse = true,    -- invert background for search, diffs, statuslines and errors
+      inverse = true, -- invert background for search, diffs, statuslines and errors
       contrast = "soft", -- can be "hard", "soft" or empty string
       dim_inactive = false,
-      transparent_mode = true
-    }
+      transparent_mode = true,
+    },
+  },
+  {
+    "f4z3r/gruvbox-material.nvim",
+    name = "gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      italics = true,
+      contrast = "soft",
+      comments = {
+        italics = true,
+      },
+      background = {
+        transparent = true,
+      },
+      float = {
+        force_background = false,
+        background_color = nil,
+      },
+      signs = {
+        force_background = false,
+        background_color = nil,
+      },
+      customize = nil,
+    },
   },
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "gruvbox" }
+    opts = { colorscheme = "gruvbox-material" },
   },
 }
