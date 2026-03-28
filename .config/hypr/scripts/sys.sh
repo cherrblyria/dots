@@ -2,7 +2,7 @@
 
 pkill rofi || true
 
-case "$(printf "kill\nkillall\nzzz\nreboot\nshutdown" | rofi -dmenu -theme-str 'listview { lines: 5; } window { width: 16%; }' -p "system")" in
+case "$(printf "kill\nkillall\nlock\nzzz\nreboot\nshutdown" | rofi -dmenu -theme-str 'listview { lines: 6; } window { width: 16%; }' -p "system")" in
 kill)
   ps -u "$USER" -o pid,comm,%cpu,%mem |
     rofi -dmenu -theme-str "window { width: 23%;}" -p "kill" |
@@ -14,6 +14,9 @@ killall)
     rofi -dmenu -theme-str "window { width: 23%;}" -p "killall" |
     awk '{print $2}' |
     xargs -r pkill
+  ;;
+lock)
+  pidof hyprlock || hyprlock
   ;;
 zzz)
   systemctl suspend
