@@ -151,13 +151,5 @@
       name: "Directories",
       pane: Pane(Directories),
     ),
-  (
-      name: "Playlists",
-      pane: Pane(Playlists),
-    ),
-  (
-      name: "Search",
-      pane: Pane(Search),
-    ),
   ],
 )

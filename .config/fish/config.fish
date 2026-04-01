@@ -117,7 +117,7 @@ end
 
 # yt-dlp
 function getaudio
-    yt-dlp -x --audio-quality 0 --audio-format opus $argv[1]
+    yt-dlp --cookies /home/nutty/Downloads/www.youtube.com_cookies.txt -x --audio-quality 0 --audio-format opus $argv[1]
     mpc update
 end
 
