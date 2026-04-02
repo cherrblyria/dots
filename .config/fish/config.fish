@@ -1,5 +1,6 @@
 # ENV
 set -Ux GOPATH "$HOME/.go"
+set -Ux EDITOR nvim
 
 # PATH
 fish_add_path \
