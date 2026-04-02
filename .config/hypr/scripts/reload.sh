@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-makoctl reload && ~/.config/hypr/scripts/osd.sh "Reloaded" "mako"
-hyprctl reload && ~/.config/hypr/scripts/osd.sh "Reloaded" "hyprland"
-pkill hyprpaper || true && hyprpaper && ~/.config/hypr/scripts/osd.sh "Reloaded" "hyprpaper"
+makoctl reload
+hyprctl reload
+pkill hyprpaper || true && hyprpaper
+
+pidof hypridle || hypridle &
+pidof hyprpolkitagent || /usr/lib/hyprpolkitagent/hyprpolkitagent &
+
 chmod +x ~/.config/hypr/scripts/*
