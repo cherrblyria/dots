@@ -9,7 +9,17 @@ fi
 
 # 1. Find the .desktop file
 # We check user local apps first, then system apps.
-DESKTOP_FILE=$(find "$HOME/.local/share/applications" "/usr/share/applications" -name "*${APP_NAME}*.desktop" 2>/dev/null | head -n 1)
+# Prioritize exact matches, then prefix matches, then any match.
+DESKTOP_FILE=$(find "$HOME/.local/share/applications" "/usr/share/applications" -name "*${APP_NAME}*.desktop" 2>/dev/null | sort | awk -v app="$APP_NAME" '
+  $0 ~ "/" app ".desktop$" { exact[++e] = $0; next }
+  $0 ~ "/" app "-" { prefix[++p] = $0; next }
+  { other[++o] = $0 }
+  END {
+    if (e > 0) print exact[1]
+    else if (p > 0) print prefix[1]
+    else if (o > 0) print other[1]
+  }
+')
 
 if [ -z "$DESKTOP_FILE" ]; then
   echo "Error: No .desktop file found for '${APP_NAME}'. Please verify the application name."
