@@ -46,6 +46,10 @@ download = [
   { run = "ya emit download --open %S", desc = "Download and open" },
   { run = "ya emit download %S", desc = "Download" },
 ]
+krita = [{ run = "krita %s1 &disown", for = "linux", desc = "Open with Krita" }]
+set-wallpaper = [
+  { run = "/home/nutty/.config/hypr/scripts/wal.sh %s1", for = "linux", desc = "Set as wallpaper" },
+]
 
 [open]
 rules = [
@@ -63,6 +67,8 @@ rules = [
   # Image
   { mime = "image/*", use = [
     "open",
+    "krita",
+    "set-wallpaper",
     "reveal",
   ] },
   # Media

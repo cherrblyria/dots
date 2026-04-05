@@ -9,12 +9,20 @@ function yc() {
   fi
 }
 
-WAL_PATH="$HOME"/.config/hypr/wal
-SELECTED="$(yc "$HOME"/Pictures/Wallpapers)"
+LINK_PATH="$HOME"/.config/hypr/wal
+WAL_PATH="$HOME/Pictures/Wallpapers"
 
-if [ "$(readlink -f "$WAL_PATH")" != "$(readlink -f "$SELECTED")" ] && [[ -n "$SELECTED" ]]; then
-  ln -sf "${SELECTED}" "${WAL_PATH}"
-  hyprctl hyprpaper wallpaper ,"$HOME/.config/hypr/wal"
+if [[ -n $1 ]]; then
+  if [ "$1" == "random" ]; then
+    SELECTED="$(find "${WAL_PATH}" -type f | shuf -n 1)"
+  fi
+else
+  SELECTED="$(yc "${WAL_PATH}")"
+fi
+
+if [ "$(readlink -f "$LINK_PATH")" != "$(readlink -f "$SELECTED")" ] && [[ -n "$SELECTED" ]]; then
+  ln -sf "${SELECTED}" "${LINK_PATH}"
+  hyprctl hyprpaper wallpaper ,"${LINK_PATH}"
   exit 0
 else
   exit 1
