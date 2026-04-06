@@ -14,7 +14,9 @@ WAL_PATH="$HOME/Pictures/Wallpapers"
 
 if [[ -n $1 ]]; then
   if [ "$1" == "random" ]; then
-    SELECTED="$(find "${WAL_PATH}" -type f | shuf -n 1)"
+    SELECTED="$(find "${WAL_PATH}" -type f | sort -R | head -n 1)"
+  else
+    SELECTED=$1
   fi
 else
   SELECTED="$(yc "${WAL_PATH}")"
@@ -24,6 +26,4 @@ if [ "$(readlink -f "$LINK_PATH")" != "$(readlink -f "$SELECTED")" ] && [[ -n "$
   ln -sf "${SELECTED}" "${LINK_PATH}"
   hyprctl hyprpaper wallpaper ,"${LINK_PATH}"
   exit 0
-else
-  exit 1
 fi
