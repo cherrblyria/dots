@@ -2,6 +2,7 @@
 
 makoctl reload
 hyprctl reload
+pkill -SIGUSR1 kitty
 pkill hyprpaper || true && hyprpaper
 
 pidof hypridle || hypridle &

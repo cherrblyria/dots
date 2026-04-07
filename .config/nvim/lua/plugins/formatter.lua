@@ -11,9 +11,12 @@ return {
         },
         formatters_by_ft = {
           bash = { "shfmt" },
-          css = { "prettier" },
+          css = { "prettier", "prettierd" },
           fish = { "fish_indent" },
           go = { "gofmt", "goimports" },
+          json = { "prettier", "prettierd" },
+          javascript = { "prettier", "prettierd" },
+          html = { "prettier", "prettierd" },
           lua = { "stylua" },
           luau = { "stylua" },
           python = { "black" },
