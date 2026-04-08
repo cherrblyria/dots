@@ -126,5 +126,4 @@ if status is-interactive
     set -g fish_greeting
     source (starship init fish --print-full-init | psub)
     zoxide init fish | source &
-    thefuck --alias | source &
 end
