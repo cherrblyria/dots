@@ -48,8 +48,8 @@ alias dkc 'docker compose'
 alias dkps 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"'
 
 # Dotfile
-alias dot "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
-alias ldot "dot config status.showUntrackedFiles false && lazygit --git-dir $HOME/.dotfiles/ --work-tree $HOME && dot config status.showUntrackedFiles true"
+alias dot "git --git-dir $HOME/.dots/ --work-tree $HOME"
+alias ldot "dot config status.showUntrackedFiles false && lazygit --git-dir $HOME/.dots/ --work-tree $HOME && dot config status.showUntrackedFiles true"
 
 # Search & Files
 abbr --add ffind 'fd --type f'
@@ -75,7 +75,6 @@ abbr --add te 'ls -T --level=2'
 abbr --add tea 'ls -AhT --level=2'
 
 # System maintenance
-abbr --add updmirror 'sudo reflector --country Thailand,Singapore --latest 10 --sort rate --save /etc/pacman.d/mirrorlist && yay -Syy'
 abbr --add clnlog 'sudo journalctl --vacuum-time=7d'
 abbr --add lpkg 'yay -Q | fzf -e'
 abbr --add lupkg 'yay -Qet | fzf -e'
@@ -115,11 +114,6 @@ function yc
 end
 
 # yt-dlp
-function getaudio
-    yt-dlp --cookies /home/nutty/Downloads/www.youtube.com_cookies.txt -x --audio-quality 0 --audio-format opus $argv[1]
-    mpc update
-end
-
 if status is-interactive
     set -g fish_greeting
     source (starship init fish --print-full-init | psub)
