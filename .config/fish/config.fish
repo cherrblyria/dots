@@ -18,8 +18,6 @@ alias please sudo
 # Programs shortcuts
 alias v nvim
 alias t tmux
-alias gem gemini
-alias gte gnome-text-editor
 
 # Git
 alias lg lazygit
