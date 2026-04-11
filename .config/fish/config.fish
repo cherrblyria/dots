@@ -1,6 +1,6 @@
 # ENV
 set -Ux GOPATH "$HOME/.go"
-set -Ux EDITOR nvim
+set -Ux EDITOR code
 
 # PATH
 fish_add_path \
@@ -16,7 +16,7 @@ alias pls sudo
 alias please sudo
 
 # Programs shortcuts
-alias v nvim
+alias e code
 alias t tmux
 
 # Git
@@ -28,15 +28,6 @@ alias gl 'git pull'
 alias gb 'git branch'
 alias gst 'git status'
 alias gcm 'git commit -m'
-
-# Cargo
-alias c cargo
-alias cr 'cargo run'
-alias ca 'cargo add'
-alias cb 'cargo build'
-alias ct 'cargo test'
-alias cc 'cargo check'
-alias ccb 'cargo clean'
 
 # Python
 alias py python
