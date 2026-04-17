@@ -17,7 +17,31 @@ alias please sudo
 
 # Programs shortcuts
 alias e code
+alias c code
 alias t tmux
+
+function kw
+    kwrite $argv &>/dev/null & disown
+end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        # builtin cd -- "$cwd"
+        z -- "$cwd"
+        rm -f -- "$tmp"
+    end
+end
+
+function yc
+    set tmp (mktemp -t "yazi-chooser.XXXXXX")
+    yazi $argv --chooser-file="$tmp"
+    if test -s "$tmp"
+        echo (cat "$tmp")
+        rm -f -- "$tmp"
+    end
+end
 
 # Git
 alias lg lazygit
@@ -72,39 +96,10 @@ abbr --add lupkg 'yay -Qet | fzf -e'
 abbr --add clnpkg 'yay -Rns (yay -Qtdq)'
 abbr --add rmpkg 'yay -Rns (yay -Qetq | fzf -e)'
 
-abbr --add clnt 'rm -rf ~/.local/share/Trash/files/*'
 abbr --add def 'find . -type f -empty -delete'
 abbr --add ded 'find . -type d -empty -delete'
 abbr --add dbl 'find . -xtype l -delete'
 
-# Safety
-function r
-    for arg in $argv
-        gio trash $arg
-    end
-end
-
-# Yazi
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        # builtin cd -- "$cwd"
-        z -- "$cwd"
-        rm -f -- "$tmp"
-    end
-end
-
-function yc
-    set tmp (mktemp -t "yazi-chooser.XXXXXX")
-    yazi $argv --chooser-file="$tmp"
-    if test -s "$tmp"
-        echo (cat "$tmp")
-        rm -f -- "$tmp"
-    end
-end
-
-# yt-dlp
 if status is-interactive
     set -g fish_greeting
     source (starship init fish --print-full-init | psub)
