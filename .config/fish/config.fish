@@ -19,6 +19,7 @@ alias please sudo
 alias e code
 alias c code
 alias t tmux
+alias oc opencode
 
 function kw
     kwrite $argv &>/dev/null & disown
@@ -49,6 +50,7 @@ alias g git
 alias ga 'git add'
 alias gp 'git push'
 alias gl 'git pull'
+alias gc 'git checkout'
 alias gb 'git branch'
 alias gst 'git status'
 alias gcm 'git commit -m'
@@ -105,3 +107,6 @@ if status is-interactive
     source (starship init fish --print-full-init | psub)
     zoxide init fish | source &
 end
+
+# opencode
+fish_add_path /home/nutty/.opencode/bin
