@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck source=/home/nutty/.config/hypr/_config.sh
-source ~/.config/hypr/_config.sh
+source "$HOME"/.config/hypr/_config.sh
 
 if pgrep -x "gpu-screen-reco" >/dev/null; then
   pkill -SIGINT -x gpu-screen-reco

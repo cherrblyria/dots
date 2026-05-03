@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck source=/home/nutty/.config/hypr/_config.sh
-source ~/.config/hypr/_config.sh
+source "$HOME"/.config/hypr/_config.sh
 
 function yc() {
   tmp=$(mktemp -t "yazi-chooser.XXXXXX")

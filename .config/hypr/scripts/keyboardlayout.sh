@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck source=/home/nutty/.config/hypr/_config.sh
+source "$HOME"/.config/hypr/_config.sh
+
 # Switch to next layout
 hyprctl switchxkblayout current next
 
@@ -12,4 +15,4 @@ if [ -z "$layout" ] || [ "$layout" == "null" ]; then
   layout=$(hyprctl devices -j | jq -r '.keyboards[0].active_keymap')
 fi
 
-# ~/.config/hypr/scripts/osd.sh "Keyboard Layout" "$layout"
+"$SCRIPT_DIR"/osd.sh "Keyboard Layout" "$layout"

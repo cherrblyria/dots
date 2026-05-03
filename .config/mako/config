@@ -1,4 +1,4 @@
-max-history=10
+max-history=20
 sort=-time
 
 font=CaskaydiaCove Nerd Font 10
@@ -10,14 +10,14 @@ border-radius=10
 background-color=#14141480
 text-color=#e8e8e8
 border-color=#3a3a3a
-progress-color=over #272727
+progress-color=over #3a3a3a
 
 max-icon-size=64
 icon-border-radius=10
 
-outer-margin=15
+outer-margin=15,15,100,0
 margin=0,0,15,0
-padding=5
+padding=7
 
 default-timeout=7000
 
@@ -30,11 +30,8 @@ border-color=#c0392b
 default-timeout=12000
 
 [app-name=osd]
-anchor=top-center
+anchor=bottom-center
 width=260
-outer-margin=6
-margin=15,0,0,0
-padding=5
 text-alignment=center
 format=<b>%s</b>%b
 default-timeout=1000

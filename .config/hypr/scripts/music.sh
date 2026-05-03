@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck source=/home/nutty/.config/hypr/_config.sh
+source "$HOME"/.config/hypr/_config.sh
+
 PLAYERS_PRIORITY=("spotify" "mpd" "chrome" "chromium" "brave")
 
 get_active_player() {
@@ -16,6 +19,14 @@ get_active_player() {
 }
 
 TARGET_PLAYER=$(get_active_player)
+
+get_now_playing() {
+  if [ -n "$TARGET_PLAYER" ]; then
+    playerctl -p "$TARGET_PLAYER" metadata --format "{{ artist }} - {{ title }}"
+  else
+    echo "No active player found"
+  fi
+}
 
 send_command() {
   if [ -n "$TARGET_PLAYER" ]; then
@@ -41,7 +52,7 @@ set_volume() {
   fi
 }
 
-case $1 in # TODO: OSD
+case $1 in
 next) send_command "next" ;;
 playpause) send_command "play-pause" ;;
 previous) send_command "previous" ;;
