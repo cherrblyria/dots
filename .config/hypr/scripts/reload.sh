@@ -4,7 +4,7 @@
 source "$HOME"/.config/hypr/_config.sh
 
 pkill -SIGUSR1 kitty
-pkill -SIGUSR2 waybar
+pkill -SIGUSR2 waybar || waybar
 makoctl reload
 hyprctl reload
 

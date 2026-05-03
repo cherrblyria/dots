@@ -1,0 +1,79 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top", // Layer to display the bar on (top, bottom, overlay)
+  "margin-top": 6, // Margin from the top of the screen
+  "reload_style_on_change": true, // Reload style.css on change
+  "height": 30, // Waybar height
+  "width": 1200, // Waybar width
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/deco1",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "mpris",
+    "tray",
+    "custom/deco2"
+  ],
+  "custom/deco1": {
+    "format": "✩⊹﹒𓂅₊⊹𓄹"
+  },
+  "custom/deco2": {
+    "format": "✰⋆｡:ﾟ･*☽"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "11": "十一",
+      "12": "十二",
+      "13": "十三",
+      "14": "十四",
+      "15": "十五",
+      "16": "十六",
+      "17": "十七",
+      "18": "十八",
+      "19": "十九",
+      "20": "二十",
+      "21": "二十一",
+      "22": "二十二",
+      "23": "二十三",
+      "24": "二十四",
+      "25": "二十五",
+      "26": "二十六",
+      "27": "二十七",
+      "28": "二十八",
+      "29": "二十九",
+      "30": "三十"
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format": "𐔌 {:%H:%M} ꒱",
+    "format-alt": "𐔌 {:%H:%M:%S} ꒱",
+    "tooltip": false
+  },
+  "mpris": {
+    "tooltip": false,
+    "max-length": 50,
+    "format": "˚♪ ₊˚ {artist} - {title}",
+    "format-paused": "˚♪ ₊˚ <i>{artist} - {title}</i>"
+    // "ignored-players": ["firefox"]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 2,
+  }
+}

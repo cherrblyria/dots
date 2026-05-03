@@ -15,8 +15,8 @@ progress-color=over #3a3a3a
 max-icon-size=64
 icon-border-radius=10
 
-outer-margin=15,15,100,0
-margin=0,0,15,0
+outer-margin=6,6,100,0
+margin=0,0,6,0
 padding=7
 
 default-timeout=7000
@@ -31,7 +31,7 @@ default-timeout=12000
 
 [app-name=osd]
 anchor=bottom-center
-width=260
+width=350
 text-alignment=center
 format=<b>%s</b>%b
 default-timeout=1000

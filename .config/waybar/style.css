@@ -1,0 +1,85 @@
+@define-color background      #141414;
+@define-color surface         #1e1e1e;
+@define-color surface2        #272727;
+@define-color foreground      #e8e8e8;
+@define-color foreground2     #8a8a8a;
+@define-color foreground3     #4e4e4e;
+@define-color outline         #3a3a3a;
+@define-color outlinedim      #2a2a2a;
+
+@define-color error-bg        #2a1414;
+@define-color error           #c0392b;
+@define-color error-outline   #4a1e1e;
+
+@define-color warning-bg      #241e0e;
+@define-color warning         #c89a2e;
+@define-color warning-outline #3d2e0e;
+
+@define-color success-bg      #101e14;
+@define-color success         #3a9e5f;
+@define-color success-outline #1a3d26;
+
+* {
+  all: unset;
+  font-family:
+    "PT Serif", "Noto Serif Thai", "Noto Serif CJK JP", "Noto Serif CJK KR",
+    "Noto Serif CJK SC", "Symbols Nerd Font";
+  font-size: 15px;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0.5);
+  border: 1px solid @outline;
+  border-radius: 10px;
+  color: @foreground;
+}
+
+label.module {
+  padding: 1px 5px;
+}
+
+label.module:first-child {
+  padding-left: 10px;
+}
+
+label.module:last-child {
+  padding-right: 10px;
+}
+
+#workspaces button {
+  transition: all 0.1s ease-in-out;
+  color: @foreground2;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+  color: @foreground;
+  border-bottom: 1px solid @foreground2;
+}
+
+#workspaces button.urgent {
+  background-color: alpha(@error-bg, 0.5);
+  color: @error;
+}
+
+#tray menu {
+  background-color: alpha(@background, 0.75);
+  border: 1px solid @outline;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+#tray menu menuitem {
+  transition: background-color 0.1s ease-in-out;
+  padding: 2 10px;
+}
+
+#tray menu menuitem:hover {
+  background-color: alpha(@foreground3, 0.5);
+}
+
+#tray menu separator {
+  background-color: @outline;
+}
