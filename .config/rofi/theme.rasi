@@ -1,0 +1,191 @@
+* {
+  /* Color Variables */
+  active-background:           var(warning);
+  active-foreground:           var(background);
+  alternate-active-background: var(active-background);
+  alternate-active-foreground: var(active-foreground);
+  alternate-urgent-background: var(urgent-background);
+  alternate-urgent-foreground: var(urgent-foreground);
+  background:                  var(mono-bg-alt);
+  border-color:                var(outline);
+  foreground:                  var(mono-fg);
+
+  /* Monochrome Base */
+  mono-bg:                     rgba(20, 20, 20, 100%);
+  mono-bg-alt:                 rgba(20, 20, 20, 50%);
+  mono-surface:                rgba(30, 30, 30, 100%);
+  mono-surface2:               rgba(39, 39, 39, 100%);
+  mono-fg:                     rgba(232, 232, 232, 100%);
+  mono-fg2:                    rgba(138, 138, 138, 100%);
+  mono-fg3:                    rgba(78, 78, 78, 100%);
+  outline:                     rgba(58, 58, 58, 100%);
+  outlinedim:                  rgba(42, 42, 42, 100%);
+
+  /* Error (Red) */
+  error-bg:                    rgba(42, 20, 20, 100%);
+  error:                       rgba(192, 57, 43, 100%);
+  error-outline:               rgba(74, 30, 30, 100%);
+
+  /* Warning (Yellow) */
+  warning-bg:                  rgba(36, 30, 14, 100%);
+  warning:                     rgba(200, 154, 46, 100%);
+  warning-outline:             rgba(61, 46, 14, 100%);
+
+  /* Success (Green) */
+  success-bg:                  rgba(16, 30, 20, 100%);
+  success:                     rgba(58, 158, 95, 100%);
+  success-outline:             rgba(26, 61, 38, 100%);
+
+  /* UI Elements */
+  highlight:                   bold italic;
+  normal-background:           var(mono-surface);
+  normal-foreground:           var(foreground);
+  scrollbar-handle:            var(border-color);
+  scrollbar:                   true;
+  separatorcolor:              var(border-color);
+
+  /* Selection States */
+  selected-active-background:  var(warning-bg);
+  selected-active-foreground:  var(warning);
+  selected-normal-background:  var(background);
+  selected-normal-foreground:  var(mono-fg);
+  selected-urgent-background:  var(error-bg);
+  selected-urgent-foreground:  var(error);
+
+  /* Urgent State */
+  urgent-background:           var(error);
+  urgent-foreground:           var(background);
+}
+
+window {
+  padding:          0;
+  border:           1px;
+  border-radius:    10px;
+  background-color: var(background);
+}
+
+mainbox {
+  padding: 10px;
+  border:  0;
+}
+
+message {
+  padding:      0;
+  border-color: var(separatorcolor);
+  border:       1px 0px 0px;
+}
+
+textbox {
+  highlight:  var(highlight);
+  text-color: var(foreground);
+}
+
+listview {
+  padding:           0;
+  scrollbar:         var(scrollbar);
+  border-color:      var(separatorcolor);
+  background-color:  none;
+  spacing:           0;
+  border:            0;
+}
+
+element {
+  padding: 4px 5px;
+  border:  0;
+  border-radius: 5px;
+}
+
+element selected {
+  border: 1px;
+}
+
+element normal.normal {
+  background-color: transparent;
+  text-color:       var(normal-foreground);
+}
+
+element normal.urgent {
+  background-color: transparent;
+  text-color:       var(urgent-foreground);
+}
+
+element normal.active {
+  background-color: transparent;
+  text-color:       var(active-foreground);
+}
+
+element selected.normal {
+  background-color: var(selected-normal-background);
+  text-color:       var(selected-normal-foreground);
+}
+
+element selected.urgent {
+  background-color: var(selected-urgent-background);
+  text-color:       var(selected-urgent-foreground);
+}
+
+element selected.active {
+  background-color: var(selected-active-background);
+  text-color:       var(selected-active-foreground);
+}
+
+element alternate.normal {
+  background-color: transparent;
+  text-color:       var(normal-foreground);
+}
+
+element alternate.urgent {
+  background-color: transparent;
+  text-color:       var(urgent-foreground);
+}
+
+element alternate.active {
+  background-color: transparent;
+  text-color:       var(active-foreground);
+}
+
+scrollbar {
+  width:         0px;
+  handle-width:  0px;
+  padding:       0;
+  border:        0;
+  border-radius: 1px;
+  handle-color:  var(scrollbar-handle);
+}
+
+inputbar {
+  spacing:    0;
+  padding:    0 0 5px 0;
+  text-color: var(normal-foreground);
+  children:   [ "prompt", "entry", "case-indicator" ];
+}
+
+case-indicator {
+  spacing:    0;
+  text-color: var(normal-foreground);
+}
+
+entry {
+  spacing:       0;
+  text-color:    var(normal-foreground);
+  padding:       4px;
+}
+
+prompt {
+  spacing:          0;
+  padding:          4px;
+  border-radius:    5px;
+  border:           1px;
+  background-color: var(background);
+  text-color:       var(normal-foreground);
+}
+
+button {
+  spacing:    0;
+  text-color: var(normal-foreground);
+}
+
+button selected {
+  background-color: var(selected-normal-background);
+  text-color:       var(selected-normal-foreground);
+}
