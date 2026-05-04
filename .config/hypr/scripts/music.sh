@@ -20,7 +20,7 @@ get_status() {
 }
 get_now_playing() {
   _require_player
-  _pl metadata --format "{{ title }}"
+  _pl metadata --format "{{ artist }}\n{{ title }}"
 }
 get_volume() {
   _require_player
