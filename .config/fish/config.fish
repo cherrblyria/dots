@@ -37,7 +37,7 @@ end
 if status is-interactive
     # Core shortcuts
     alias q exit
-    alias cls clear
+    alias cls "clear && kotofetch --border false --source true"
     alias doas sudo
     alias pls sudo
     alias plz sudo
@@ -46,6 +46,7 @@ if status is-interactive
     # Programs shortcuts
     alias v nvim
     alias t tmux
+    alias oc opencode
 
     # Git
     alias lg lazygit
@@ -98,6 +99,7 @@ if status is-interactive
     abbr --add dbl 'find . -xtype l -delete'
 
     # Init
+    kotofetch --border false --source true
     set -g fish_greeting
     source (/usr/sbin/starship init fish --print-full-init | psub)
     zoxide init fish | source

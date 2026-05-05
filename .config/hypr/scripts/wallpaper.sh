@@ -24,6 +24,7 @@ if [[ -n $1 ]]; then
       SELECTED="$(find -L "${WALLPAPER_PATH}" -type f | sort -R | head -n 1)"
       i=$((i + 1))
     done
+
     echo Selected random wallpaper: "${SELECTED}"
   else
     SELECTED=$1
@@ -31,6 +32,12 @@ if [[ -n $1 ]]; then
   fi
 else
   SELECTED="$(yc "${WALLPAPER_PATH}")"
+
+  if [ -z "${SELECTED}" ] || [ ! -f "${SELECTED}" ]; then
+    echo "No wallpaper selected or file does not exist."
+    exit 0
+  fi
+
   echo Selected wallpaper: "${SELECTED}"
 fi
 

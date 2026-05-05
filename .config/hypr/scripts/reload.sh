@@ -3,6 +3,8 @@
 # shellcheck source=/home/nutty/.config/hypr/_config.sh
 source "$HOME"/.config/hypr/_config.sh
 
+pidof hypridle || hypridle
+
 pkill -SIGUSR1 kitty
 pkill -SIGUSR2 waybar || waybar
 makoctl reload
