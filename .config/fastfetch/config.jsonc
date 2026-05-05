@@ -1,0 +1,89 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "file-raw",
+    "source": "~/.config/fastfetch/logo.txt",
+    "padding": {
+      "top": 2,
+      "left": 2
+    }
+  },
+  "display": {
+    "color": {
+      "keys": "dim_",
+      "output": "white",
+      "separator": "dim_"
+    },
+    "key": {
+      "type": "icon"
+    },
+    "bar": {
+      "width": 34,
+      "border": {
+        "left": "「",
+        "right": "」"
+      },
+      "char": {
+        "elapsed": "󰹞",
+        "total": " "
+      }
+    },
+    "percent": {
+      "type": 6,
+      "color": {
+        "green": "dim_",
+        "yellow": "white",
+        "red": "white"
+      }
+    },
+    "separator": ""
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "˖⁺.꒷꒦♡꒷꒦˖⁺.{#1}{1}{#}୨୧{#1}{2}{#}︶꒦꒷ʚɞ꒷꒦︶"
+    },
+    "break",
+    {
+      "type": "os",
+      "format": "{2}",
+      "keyIcon": "   󰣇  "
+    },
+    {
+      "type": "kernel",
+      "keyIcon": "     "
+    },
+    {
+      "type": "wm",
+      "format": "{2}",
+      "keyIcon": "     "
+    },
+    {
+      "type": "cpu",
+      "format": "{1} {7}",
+      "keyIcon": "     "
+    },
+    {
+      "type": "gpu",
+      "format": "{1} {2} {12}",
+      "keyIcon": "   󰢮  "
+    },
+    {
+      "type": "memory",
+      "keyIcon": "    "
+    },
+    {
+      "type": "disk",
+      "keyIcon": "    "
+    },
+    {
+      "type": "uptime",
+      "keyIcon": "   󰄉  "
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 13
+    }
+  ]
+}

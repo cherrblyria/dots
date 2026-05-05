@@ -37,7 +37,7 @@ end
 if status is-interactive
     # Core shortcuts
     alias q exit
-    alias cls "clear && kotofetch --border false --source true"
+    alias cls "clear && fastfetch"
     alias doas sudo
     alias pls sudo
     alias plz sudo
@@ -99,7 +99,8 @@ if status is-interactive
     abbr --add dbl 'find . -xtype l -delete'
 
     # Init
-    kotofetch --border false --source true
+    # kotofetch --border false --source true
+    fastfetch
     set -g fish_greeting
     source (/usr/sbin/starship init fish --print-full-init | psub)
     zoxide init fish | source
