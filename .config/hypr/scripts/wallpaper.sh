@@ -16,36 +16,41 @@ SYMLINK="$HOME/.cache/wallpaper"
 HISTORY_FILE="$HOME/.cache/wallpaper_history"
 
 function pick_random() {
-  # Get all wallpapers, resolve symlinks so paths are consistent
-  mapfile -t ALL < <(find -L "${WALLPAPER_PATH}" -type f | sort)
+  mapfile -t ALL < <(find -L "${WALLPAPER_PATH}" -type f -exec readlink -f {} \; | sort -u)
+  WALL_COUNT=${#ALL[@]}
 
-  # Read history (resolved paths)
+  TARGET_HISTORY=$((WALL_COUNT - WALL_RANDOM_POOL))
+  [[ $TARGET_HISTORY -lt 0 ]] && TARGET_HISTORY=0
+
   mapfile -t HISTORY < <(cat "${HISTORY_FILE}" 2>/dev/null)
 
-  # Filter out wallpapers in history
-  CANDIDATES=()
-  for w in "${ALL[@]}"; do
-    resolved="$(readlink -f "$w")"
-    skip=0
-    for h in "${HISTORY[@]}"; do
-      [[ "$resolved" == "$h" ]] && skip=1 && break
-    done
-    [[ $skip -eq 0 ]] && CANDIDATES+=("$resolved")
-  done
-
-  # If all wallpapers are exhausted (history too big / small library), reset history
-  if [[ ${#CANDIDATES[@]} -eq 0 ]]; then
-    echo "History exhausted, resetting..." >&2
-    >"${HISTORY_FILE}"
-    CANDIDATES=("${ALL[@]}")
+  # Trim history if it grew beyond target (e.g. you removed wallpapers)
+  if [[ ${#HISTORY[@]} -gt $TARGET_HISTORY ]]; then
+    TRIM=$((${#HISTORY[@]} - TARGET_HISTORY))
+    HISTORY=("${HISTORY[@]:$TRIM}") # drop oldest from top
+    printf '%s\n' "${HISTORY[@]}" >"${HISTORY_FILE}"
   fi
 
-  # Pick one randomly
+  # Build candidates: walls not in history
+  CANDIDATES=()
+  for w in "${ALL[@]}"; do
+    skip=0
+    for h in "${HISTORY[@]}"; do
+      [[ "$w" == "$h" ]] && skip=1 && break
+    done
+    [[ $skip -eq 0 ]] && CANDIDATES+=("$w")
+  done
+
+  # Fallback (RANDOM_POOL >= wall count)
+  [[ ${#CANDIDATES[@]} -eq 0 ]] && CANDIDATES=("${ALL[@]}")
+
   SELECTED="${CANDIDATES[RANDOM % ${#CANDIDATES[@]}]}"
 
-  # Append to history, keep only last $HISTORY_SIZE entries
+  # Append and trim history to target size
   echo "${SELECTED}" >>"${HISTORY_FILE}"
-  tail -n "${WALLPAPER_HISTORY_SIZE}" "${HISTORY_FILE}" >"${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "${HISTORY_FILE}"
+  [[ $TARGET_HISTORY -gt 0 ]] &&
+    tail -n "${TARGET_HISTORY}" "${HISTORY_FILE}" >"${HISTORY_FILE}.tmp" &&
+    mv "${HISTORY_FILE}.tmp" "${HISTORY_FILE}"
 
   echo "${SELECTED}"
 }

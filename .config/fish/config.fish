@@ -7,6 +7,10 @@ fish_add_path \
     "$HOME/.local/bin" \
     "$HOME/.go/bin"
 
+function gte
+    gnome-text-editor -- "$argv" 2&>/dev/null & disown
+end
+
 # Safety
 function r
     for arg in $argv

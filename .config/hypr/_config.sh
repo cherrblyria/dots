@@ -9,7 +9,7 @@ export SCREENRECORD_DIR="$HOME/Videos/Screen Recordings"
 export CURSOR_THEME="Remus-White"
 export CURSOR_SIZE=24
 
-export WALLPAPER_HISTORY_SIZE=15
+export WALL_RANDOM_POOL=3
 export PLAYER=spotify
 
 export DRUN="pkill rofi || true && rofi -show drun -show-icons"
