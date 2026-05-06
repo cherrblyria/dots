@@ -1,4 +1,3 @@
 ## Cherrblyria's Dotfiles
 
-> [!warning]
-> Currently WIP yet!
+> Yet Another Monochrome Hyprland Dotifles
