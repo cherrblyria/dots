@@ -19,9 +19,11 @@
     "custom/deco2"
   ],
   "custom/deco1": {
-    "format": "✩⊹﹒𓂅₊⊹𓄹"
+    "format": "✩⊹﹒𓂅₊⊹𓄹",
+    "tooltip": false
   },
   "hyprland/workspaces": {
+    "tooltip": false,
     "format": "{icon}",
     "format-icons": {
       "1": "一",
@@ -42,10 +44,10 @@
     }
   },
   "clock": {
+    "tooltip": false,
     "interval": 1,
     "format": "𐔌 {:%H:%M} ꒱",
-    "format-alt": "𐔌 {:%H:%M:%S} ꒱",
-    "tooltip": false
+    "format-alt": "𐔌 {:%H:%M:%S} ꒱"
   },
   "mpris": {
     "tooltip": false,
@@ -55,10 +57,12 @@
     // "ignored-players": ["firefox"]
   },
   "tray": {
+    "tooltip": false,
     "icon-size": 18,
     "spacing": 2
   },
   "custom/deco2": {
+    "tooltip": false,
     "format": "✰⋆｡:ﾟ･*☽"
   }
 }

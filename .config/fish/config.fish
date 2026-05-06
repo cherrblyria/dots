@@ -100,7 +100,7 @@ if status is-interactive
 
     # Init
     # kotofetch --border false --source true
-    fastfetch
+    cls
     set -g fish_greeting
     source (/usr/sbin/starship init fish --print-full-init | psub)
     zoxide init fish | source
